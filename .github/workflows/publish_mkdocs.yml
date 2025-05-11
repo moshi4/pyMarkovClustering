@@ -17,6 +17,11 @@ jobs:
           curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash
           echo "$HOME/.rye/shims" >> $GITHUB_PATH
 
+      - name: Install external tool dependencies
+        run: |
+          sudo apt update -y
+          sudo apt install -y graphviz libgraphviz-dev
+
       - name: Install Python & MkDocs & Plugins
         run: rye sync
 
