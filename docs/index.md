@@ -1,1 +1,1 @@
-/home/ys/Desktop/Project/develop/pyMarkovClustering/README.md
+--8<-- "README.md"
