@@ -64,7 +64,6 @@ def mcl(
     logger.info(f"Load {row_num}x{col_num} matrix with {len(matrix.data)} entries")
     set_self_loops(matrix)
     matrix = normalize(matrix)
-    matrix = prune(matrix)
     # logger.info(f"Initial Normalization\n{matrix.toarray()}")
     for i in range(1, max_iter + 1):
         start_time = time.time()
@@ -168,6 +167,7 @@ def set_self_loops(matrix: csr_matrix) -> None:
     matrix : csr_matrix
         Target matrix
     """
+    matrix.setdiag(0)
     diag = matrix.max(axis=0).toarray().flatten()
     diag[diag == 0] = 1
     matrix.setdiag(diag)

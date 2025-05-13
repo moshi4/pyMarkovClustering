@@ -18,9 +18,11 @@
 
 pyMarkovClustering is a python package for Markov Clustering (MCL) and its graph visualization.
 While there is already a python library [markov_clustering](https://github.com/GuyAllard/markov_clustering) that implements the MCL algorithm,
-it has not been maintained for a long time and lacks some functionality. To address these issues, pyMarkovClustering was developed.
+it has not been maintained for a long time and lacks some functionality.
+pyMarkovClustering was developed to enable easy MCL and graph visualization from edges consisting of a list of source, target, and weight.
 
 > [!NOTE]
+> pyMarkovClustering adjusts matrix preprocessing and parameters to achieve the same results as [mcl](https://github.com/micans/mcl) command-line tool.
 > This library uses scipy sparse matrix for its MCL implementation and can cluster simple graphs with a few thousand nodes without any problems.
 > However, if you need to cluster a complex graph with tens of thousands of nodes or more,
 > I recommend using [mcl](https://github.com/micans/mcl) command-line tool for better runtime performance and memory efficiency.
@@ -28,7 +30,7 @@ it has not been maintained for a long time and lacks some functionality. To addr
 ## Installation
 
 `Python 3.9 or later` is required for installation.  
-For visualization, *networkx* and extra packages (e.g. *matplotlib*, *pygraphviz*) are also required.
+For visualization, [networkx](https://github.com/networkx/networkx) and extra packages (e.g. *matplotlib*, *pygraphviz*) are also required.
 
 **Install PyPI package:**
 
@@ -50,6 +52,8 @@ conda install -c conda-forge networkx matplotlib-base pygraphviz pydot lxml # Fo
 
 ## API Usage
 
+pyMarkovClustering provides a easy-to-use API to perform Markov Clustering from edges (list of source, target, weight).
+It also provides an API to visualize the clustering results using networkx.
 See [notebooks](https://moshi4.github.io/pyMarkovClustering/example/) and [API docs](https://moshi4.github.io/pyMarkovClustering/api-docs/pymarkovclustering/) in documents for more details.
 
 ### Markov Clustering
