@@ -64,7 +64,6 @@ def mcl(
     logger.info(f"Load {row_num}x{col_num} matrix with {len(matrix.data)} entries")
     set_self_loops(matrix)
     matrix = normalize(matrix)
-    matrix = prune(matrix)
     # logger.info(f"Initial Normalization\n{matrix.toarray()}")
     for i in range(1, max_iter + 1):
         start_time = time.time()
