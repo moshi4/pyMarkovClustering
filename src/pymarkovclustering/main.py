@@ -167,6 +167,7 @@ def set_self_loops(matrix: csr_matrix) -> None:
     matrix : csr_matrix
         Target matrix
     """
+    matrix.setdiag(0)
     diag = matrix.max(axis=0).toarray().flatten()
     diag[diag == 0] = 1
     matrix.setdiag(diag)
